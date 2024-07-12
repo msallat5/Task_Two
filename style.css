@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefae0;
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #faedcd;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: #e9edc9;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.button.up {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button.down {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button.left {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.button.right {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    transform: translate(-50%, -50%);
+}
+
+.button.up::before {
+    border-width: 0 10px 10px 10px;
+    border-bottom-color: #ccd5ae;
+}
+
+.button.down::before {
+    border-width: 10px 10px 0 10px;
+    border-top-color: #ccd5ae;
+}
+
+.button.left::before {
+    border-width: 10px 10px 10px 0;
+    border-right-color: #ccd5ae;
+}
+
+.button.right::before {
+    border-width: 10px 0 10px 10px;
+    border-left-color: #ccd5ae;
+}
+
+.log-container {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #faedcd;
+    color: #333;
+    padding: 10px;
+    overflow-y: auto;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+}
